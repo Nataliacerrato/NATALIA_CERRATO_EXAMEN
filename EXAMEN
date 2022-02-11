@@ -1,0 +1,23 @@
+select 
+ t1.numeroID,
+ concat_ws(' ',nombres,apellidos) as'nombrecompleto'
+ from bd_facts.tbl_clientes t1
+ inner join bd_facts.tbl_asesores t2
+;
+
+
+
+
+
+
+
+
+select 
+t1.nombrecompleto,
+t2.idFactura,
+t2.fechaEmision,
+t2.fechaVencimiento,
+t2.fechapagada
+ from bd_facts.tbl_clientes t1
+ inner join bd_facts.tbl_facturas t2
+where t2.fechapagada is null;
